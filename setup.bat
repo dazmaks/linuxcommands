@@ -1,2 +1,2 @@
 @echo off
-setx /M path "%path%;C:\Users\root\Documents\GitHub\linuxcommands"
+setx /M path "%path%;%cd%\bin"

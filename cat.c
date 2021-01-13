@@ -3,7 +3,7 @@ int main(int argc, char** argv)
 {
     if (argc<2)
     {
-        printf("Error need more arguments!\nUsage: cat \"File Name\"");
+        printf("Error: need more arguments!\nUsage: cat \"File Name\"");
         exit(0);
     }
     for (int i = 0; i < argc; ++i)

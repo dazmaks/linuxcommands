@@ -5,4 +5,5 @@ gcc cat.c -o bin/cat.exe
 gcc clear.c -o bin/clear.exe
 gcc pwd.c -o bin/pwd.exe
 gcc touch.c -o bin/touch.exe
+gcc rm.c -o bin/rm.exe
 pause

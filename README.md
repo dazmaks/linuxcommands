@@ -1,5 +1,5 @@
 # What is it
-It's Windows alternative for GNU coreutils commands.
+It's Windows alternative of some of GNU coreutils commands.
 # Setting up
 1. Clone repository
 ```Bash

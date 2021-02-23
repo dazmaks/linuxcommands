@@ -7,7 +7,7 @@ git clone https://github.com/dazmaks/linuxcommands.git
 cd linuxcommands
 ```
 2. Run build.bat
-(install mingw if not installed)
+(install mingw and c# compiler if not installed)
 ```Bash
 build
 ```

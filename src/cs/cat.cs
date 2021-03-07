@@ -5,23 +5,16 @@ class cat
 {
     static void Main(string[] args)
     {
-        if (args.Length != 1)
+        for (int i = 0; i<args.Length; i++)
         {
-            Console.WriteLine("Error: need more arguments!\nUsage: cat \"File Name\"");
-        }
-        else
-        {
-            for (int i = 0; i<args.Length; i++)
+            if (File.Exists(args[i]) == false)
             {
-                if (File.Exists(args[i]) == false)
-                {
-                    Console.WriteLine("Error: file {0} not found!", args[i]);
-                }
-                else
-                {
-                    string contents = File.ReadAllText(args[i]);
-                    Console.Write(contents);
-                }
+                Console.WriteLine("Error: file {0} not found!", args[i]);
+            }
+            else
+            {
+                string contents = File.ReadAllText(args[i]);
+                Console.Write(contents);
             }
         }
     }

@@ -5,29 +5,32 @@ class cp
 {
     static void Main(string[] args)
     {
-        if (args.Length == 2){
+        if (args.Length > 1){
             string path = @args[0];
-            string path2 = @args[1];
-            try
+
+            for (int i = 1; i<args.Length; i++)
             {
-                if (!File.Exists(path))
+                try
                 {
-                    using (FileStream fs = File.Create(path)) {}
+                    if (!File.Exists(path))
+                    {
+                        File.Create(path);
+                    }
+                    if (File.Exists(args[i]))
+                    {
+                        Console.WriteLine("Error: file {0} exists!", args[i]);
+                    }else{
+                        File.Copy(path, args[i]);
+                    }
                 }
-                if (File.Exists(path2))
-                File.Delete(path2);
-                File.Copy(path, path2);
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error: {0} on file \"{1}\"", e.ToString(), args[i]);
+                }
             }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error: {0}", e.ToString());
-            }
+
         }else{
-            if (args.Length < 2) {
-                Console.WriteLine("Error: need more arguments!\nUsage: cp \"File Name\"(to read) \"File Name\"(to write)");
-            }else{
-                Console.WriteLine("Error: need less arguments!\nUsage: cp \"File Name\"(to read) \"File Name\"(to write)");
-            }
+            Console.WriteLine("Error: need more arguments!\nUsage: cp \"File Name\"(to read) \"File Name\"(to write)");
         }
     }
 }

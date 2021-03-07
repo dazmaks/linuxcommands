@@ -13,20 +13,20 @@ class df
                 d.Name, d.DriveFormat, d.DriveType);
             if (d.IsReady == true)
             {
-                Console.WriteLine(
-                    "\tAvailable space to current user:{0, 15} bytes",
-                    d.AvailableFreeSpace);
 
                 Console.WriteLine(
-                    "\tTotal available space:          {0, 15} bytes",
-                    d.TotalFreeSpace);
+                    "\tAvailable space:          {0, 15} GB",
+                    d.TotalFreeSpace/1073741824);
 
                 Console.WriteLine(
-                    "\tTotal size of drive:            {0, 15} bytes ",
-                    d.TotalSize);
-                double freeSpacePerc = (d.AvailableFreeSpace / (float)d.TotalSize) * 100;
-                Console.WriteLine("\tPercentage free space:                         {0:0.00}%",
-                    freeSpacePerc);
+                    "\tUsed space:               {0, 15} GB",
+                    (d.TotalSize - d.TotalFreeSpace)/1073741824);
+
+                Console.WriteLine(
+                    "\tSize of drive:            {0, 15} GB ",
+                    d.TotalSize/1073741824);
+                Console.WriteLine("\tPercentage free space:                {0:0.00}%",
+                    (d.AvailableFreeSpace / (float)d.TotalSize) * 100);
             }
         }
     }

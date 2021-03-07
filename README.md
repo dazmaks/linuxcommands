@@ -1,7 +1,7 @@
 # What is it
 It's Windows alternative of some of GNU coreutils commands.
 # Setting up
-1. Clone repository
+1. Clone repository and open it
 ```Bash
 git clone https://github.com/dazmaks/linuxcommands.git
 cd linuxcommands
